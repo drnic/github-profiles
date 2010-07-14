@@ -14,5 +14,10 @@
     #wrapper
       .container= render :partial => 'layouts/header'
       #content
-        .container= yield
+        .container
+          - unless flash.blank?
+            .flash
+              - flash.each_pair do |type, message|
+                %span{:id => "flash_#{type}"}= message
+          = yield
     = render :partial => 'layouts/footer'

@@ -14,4 +14,17 @@ Feature: Profile preparation
     And "drnicwilliams@gmail.com" should receive no emails
     When profile "drnic" is completed
     Then "drnicwilliams@gmail.com" should receive an email
+
+  Scenario: Request an existing profile and request update
+    Given I am on the home page
+    When I fill in "GitHub User" with "drnic"
+    And  I press "Submit"
+    Then I should be on profile page for "drnic"
+    Then I should see "A litter of octokittens is processing your request."
+    And "drnicwilliams@gmail.com" should receive no emails
+    When I fill in "Email" with "drnicwilliams@gmail.com"
+    And  I press "Notify me"
+    And "drnicwilliams@gmail.com" should receive no emails
+    When profile "drnic" is completed
+    Then "drnicwilliams@gmail.com" should receive an email
   
