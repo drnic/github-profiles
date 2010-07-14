@@ -19,7 +19,8 @@ group :test do
 end
 
 group :cucumber do
-  gem 'cucumber','0.7.3'
+  gem 'cucumber','0.8.4'
+  gem 'cucumber-rails', '0.3.0'
   gem 'capybara','0.3.8'
   gem 'rspec','1.3.0'
   gem 'rspec-rails', '1.3.2', :require => 'spec/rails'
