@@ -1,0 +1,6 @@
+%h2.avatared
+  - if @github_user.gravatar_id
+    %img{:src => @github_user.gravatar_url, :width => 48, :height => 48}
+  = @github_user.login
+  - if @github_user.name
+    == (#{@github_user.name})

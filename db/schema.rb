@@ -9,13 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100714031235) do
+ActiveRecord::Schema.define(:version => 20100714034122) do
 
   create_table "github_users", :force => true do |t|
     t.string   "login"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "gravatar_id"
+    t.string   "company"
+    t.integer  "public_repo_count"
+    t.integer  "public_gist_count"
+    t.integer  "following_count"
+    t.integer  "followers_count"
+    t.string   "email"
   end
 
   create_table "sessions", :force => true do |t|
